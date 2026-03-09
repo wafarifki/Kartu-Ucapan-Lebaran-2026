@@ -55,6 +55,7 @@ $(document).ready(function () {
     let isOpened = false;
 
     $('#openBtn').on('click', function () {
+        var audio = document.getElementById("takbiran_sound");
         if (isOpened) return;
         isOpened = true;
 
@@ -73,6 +74,9 @@ $(document).ready(function () {
                 $('#whiteFlash').removeClass('flash-active');
             }, 100);
         }, 1200);
+
+        audio.currentTime = 0;
+        audio.play();
     });
 
     $(document).on('mousemove', function (e) {
